@@ -106,8 +106,10 @@ public class HttpRequest {
 
                 String[] keyValuePairs = request.query.split("&");
                 for (String keyValuePair : keyValuePairs) {
-                    String[] keyValue = keyValuePair.split("=");
-                    request.params.put(keyValue[0], keyValue[1]);
+                    String[] keyValue = keyValuePair.split("=", 2);
+                    if (keyValue.length == 2) {
+                        request.params.put(keyValue[0], keyValue[1]);
+                    }
                 }
             } else {
                 request.path = request.uri;

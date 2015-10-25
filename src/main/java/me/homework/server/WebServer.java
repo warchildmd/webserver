@@ -12,7 +12,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Mihail on 10/24/2015.
+ * Request dispatcher and the main entry point of the application.
+ * Listens on a port for new connections and accepts them. New connections are handled by the executor pool.
  */
 public class WebServer implements Runnable {
 
